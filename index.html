@@ -3,104 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Crescent — Fiches de révision</title>
+    <title>Math Crescent — Accueil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- En-tête -->
     <header class="navbar">
         <div class="logo">
             <h1>Math Crescent</h1>
         </div>
         <nav>
-            <button class="nav-btn active" onclick="showPage('home')">Accueil</button>
-            <button class="nav-btn" onclick="showPage('sn4')">Sec 4 SN</button>
-            <button class="nav-btn" onclick="showPage('sn5')">Sec 5 SN</button>
+            <a href="index.html" class="nav-btn active">Accueil</a>
+            <a href="sn4.html" class="nav-btn">Sec 4 SN</a>
+            <a href="sn5.html" class="nav-btn">Sec 5 SN</a>
         </nav>
     </header>
 
     <main class="container">
+        <section class="hero">
+            <h2>Fiches de révision & Matériel d'accompagnement</h2>
+            <p>Bienvenue sur le site officiel de la chaîne <strong>Math Crescent</strong>. Vous trouverez ici toutes les fiches récapitulatives en PDF associées aux vidéos explicatives pour réussir vos cours de mathématiques au secondaire.</p>
 
-        <!-- PAGE ACCUEIL -->
-        <section id="home" class="page active-page">
-            <div class="hero">
-                <h2>Fiches de révision & Matériel d'accompagnement</h2>
-                <p>Bienvenue sur le site officiel de la chaîne <strong>Math Crescent</strong>. Vous trouverez ici toutes les fiches récapitulatives en PDF associées aux vidéos explicatives pour réussir vos cours de mathématiques au secondaire.</p>
-
-                <div class="card-grid">
-                    <div class="card" onclick="showPage('sn4')">
-                        <h3>Secondary 4 SN</h3>
-                        <p>Consulter les fiches de révision pour le programme de 4e secondaire (fonctions, géométrie, trigonométrie...).</p>
-                        <span class="card-link">Voir les ressources &rarr;</span>
-                    </div>
-                    <div class="card" onclick="showPage('sn5')">
-                        <h3>Secondary 5 SN</h3>
-                        <p>Consulter les fiches de révision pour le programme de 5e secondaire (logarithmes, coniques, vecteurs...).</p>
-                        <span class="card-link">Voir les ressources &rarr;</span>
-                    </div>
-                </div>
+            <div class="card-grid">
+                <a href="sn4.html" class="card">
+                    <h3>Secondary 4 SN</h3>
+                    <p>Consulter les fiches de révision pour le programme de 4e secondaire (fonctions, géométrie, trigonométrie...).</p>
+                    <span class="card-link">Voir les ressources &rarr;</span>
+                </a>
+                <a href="sn5.html" class="card">
+                    <h3>Secondary 5 SN</h3>
+                    <p>Consulter les fiches de révision pour le programme de 5e secondaire (logarithmes, coniques, vecteurs...).</p>
+                    <span class="card-link">Voir les ressources &rarr;</span>
+                </a>
             </div>
         </section>
-
-        <!-- PAGE SECONDAIRE 4 SN -->
-        <section id="sn4" class="page">
-            <h2>Secondaire 4 — Science Naturelle (SN4)</h2>
-            <p class="subtitle">Retrouvez les fiches de révision et liens vers les vidéos explicatives.</p>
-
-            <div class="search-box">
-                <input type="text" id="search-sn4" placeholder="Rechercher par thème ou titre..." onkeyup="filterTable('sn4')">
-            </div>
-
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Catégorie / Thème</th>
-                            <th>Titre de la vidéo</th>
-                            <th>Fiche de révision</th>
-                            <th>Vidéo YouTube</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body-sn4">
-                        <!-- Le contenu sera généré dynamiquement par le JS -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- PAGE SECONDAIRE 5 SN -->
-        <section id="sn5" class="page">
-            <h2>Secondaire 5 — Science Naturelle (SN5)</h2>
-            <p class="subtitle">Retrouvez les fiches de révision et liens vers les vidéos explicatives.</p>
-
-            <div class="search-box">
-                <input type="text" id="search-sn5" placeholder="Rechercher par thème ou titre..." onkeyup="filterTable('sn5')">
-            </div>
-
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Catégorie / Thème</th>
-                            <th>Titre de la vidéo</th>
-                            <th>Fiche de révision</th>
-                            <th>Vidéo YouTube</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body-sn5">
-                        <!-- Le contenu sera généré dynamiquement par le JS -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
     </main>
 
     <footer>
         <p>&copy; 2026 Math Crescent. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>

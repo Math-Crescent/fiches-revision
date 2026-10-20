@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Crescent — Secondary 4 SN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <h1>Math Crescent</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-btn">Accueil</a>
+            <a href="sn4.html" class="nav-btn active">Sec 4 SN</a>
+            <a href="sn5.html" class="nav-btn">Sec 5 SN</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Secondaire 4 — Science Naturelle (SN4)</h2>
+            <p class="subtitle">Retrouvez les fiches de révision et liens vers les vidéos explicatives.</p>
+
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Rechercher par thème ou titre..." onkeyup="filterTable('sn4')">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Catégorie / Thème</th>
+                            <th>Titre de la vidéo</th>
+                            <th>Fiche de révision</th>
+                            <th>Vidéo YouTube</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Le contenu sera généré dynamiquement par script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Math Crescent. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

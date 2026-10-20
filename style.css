@@ -1,7 +1,3 @@
-/* ==========================================================================
-   STYLES DE BASE & RESPONSIVE (Méthode Mobile-Friendly)
-   ========================================================================== */
-
 :root {
     --primary: #1e3a8a;
     --secondary: #0d9488;
@@ -20,10 +16,10 @@ body {
     line-height: 1.5;
 }
 
-/* En-tête / Navbar réactive */
+/* En-tête */
 .navbar {
     display: flex;
-    flex-direction: column; /* Alignement vertical par défaut (mobile) */
+    flex-direction: column;
     gap: 0.75rem;
     align-items: center;
     background-color: var(--primary);
@@ -45,16 +41,16 @@ nav {
 }
 
 nav .nav-btn {
-    flex: 1; /* Les boutons prennent une largeur égale sur mobile */
+    flex: 1;
     max-width: 120px;
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: white;
     padding: 0.6rem 0.5rem;
     font-size: 0.9rem;
-    cursor: pointer;
     border-radius: 6px;
     text-align: center;
+    text-decoration: none;
 }
 
 nav .nav-btn.active {
@@ -62,14 +58,60 @@ nav .nav-btn.active {
     font-weight: bold;
 }
 
-/* Conteneur principal */
 .container {
     padding: 1rem;
     max-width: 1100px;
     margin: 0 auto;
+    min-height: 75vh;
 }
 
-/* Barre de recherche responsive */
+.subtitle {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+/* Page d'accueil Cards */
+.hero {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-top: 0;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+/* Recherche */
 .search-box input {
     width: 100%;
     padding: 0.85rem 1rem;
@@ -80,24 +122,18 @@ nav .nav-btn.active {
     margin-bottom: 1rem;
 }
 
-/* ==========================================================================
-   TRANSFORMATION DU TABLEAU EN CARTES (POUR MOBILE)
-   ========================================================================== */
-
-/* Sur petit écran : Transformer le tableau <table> en blocs/cartes */
+/* Style Mobile (Mode Carte) */
 @media screen and (max-width: 767px) {
     table, thead, tbody, th, td, tr {
         display: block;
     }
 
-    /* Masquer l'en-tête du tableau sur mobile */
     thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
 
-    /* Chaque ligne devient un bloc/carte indépendant */
     tr {
         background: white;
         border: 1px solid var(--border-color);
@@ -109,12 +145,16 @@ nav .nav-btn.active {
 
     td {
         border: none;
-        padding: 0.4rem 0;
-        display: flex;
-        flex-direction: column;
+        padding: 0.3rem 0;
     }
 
-    /* Boutons de liens plein écran sur mobile */
+    td:first-child {
+        color: var(--secondary);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
     .btn-link {
         display: block;
         text-align: center;
@@ -126,21 +166,11 @@ nav .nav-btn.active {
         font-weight: bold;
     }
 
-    .btn-pdf {
-        background-color: #e0f2fe;
-        color: #0369a1;
-    }
-
-    .btn-yt {
-        background-color: #fee2e2;
-        color: #dc2626;
-    }
+    .btn-pdf { background-color: #e0f2fe; color: #0369a1; }
+    .btn-yt { background-color: #fee2e2; color: #dc2626; }
 }
 
-/* ==========================================================================
-   STYLES POUR ÉCRANS D'ORDINATEUR (ORDINATEUR & TABLETTE > 768px)
-   ========================================================================== */
-
+/* Style Ordinateur (Tableau classique) */
 @media screen and (min-width: 768px) {
     .navbar {
         flex-direction: row;
@@ -148,20 +178,10 @@ nav .nav-btn.active {
         padding: 1rem 2rem;
     }
 
-    .logo h1 {
-        font-size: 1.6rem;
-    }
+    .logo h1 { font-size: 1.6rem; }
+    nav { width: auto; }
+    nav .nav-btn { flex: initial; padding: 0.5rem 1.2rem; }
 
-    nav {
-        width: auto;
-    }
-
-    nav .nav-btn {
-        flex: initial;
-        padding: 0.5rem 1.2rem;
-    }
-
-    /* Rétablir l'affichage sous forme de tableau traditionnel */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -169,22 +189,6 @@ nav .nav-btn.active {
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
-
-    thead {
-        display: table-header-group;
-    }
-
-    tbody {
-        display: table-row-group;
-    }
-
-    tr {
-        display: table-row;
-        border: none;
-        box-shadow: none;
-        margin-bottom: 0;
-        padding: 0;
     }
 
     th {
@@ -195,7 +199,6 @@ nav .nav-btn.active {
     }
 
     td {
-        display: table-cell;
         padding: 1rem;
         border-bottom: 1px solid var(--border-color);
     }
@@ -209,13 +212,15 @@ nav .nav-btn.active {
         font-weight: 600;
     }
 
-    .btn-pdf {
-        background-color: #e0f2fe;
-        color: #0369a1;
-    }
+    .btn-pdf { background-color: #e0f2fe; color: #0369a1; }
+    .btn-yt { background-color: #fee2e2; color: #dc2626; }
+}
 
-    .btn-yt {
-        background-color: #fee2e2;
-        color: #dc2626;
-    }
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-top: 1px solid var(--border-color);
+    color: #64748b;
+    font-size: 0.9rem;
 }

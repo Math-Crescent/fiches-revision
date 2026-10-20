@@ -1,4 +1,4 @@
-// Données de démonstration (Structure correspondant à un futur fichier CSV)
+// Données de démonstration
 const dataSN4 = [
     { categorie: "Fonctions", titre: "Les transformations de la fonction de base", pdf: "https://drive.google.com/example-pdf1", youtube: "https://youtube.com/watch?v=example1" },
     { categorie: "Géométrie", titre: "Les relations métriques dans le triangle rectangle", pdf: "https://drive.google.com/example-pdf2", youtube: "https://youtube.com/watch?v=example2" },
@@ -11,27 +11,12 @@ const dataSN5 = [
     { categorie: "Trigonométrie", titre: "Les identités trigonométriques et preuves", pdf: "https://drive.google.com/example-pdf6", youtube: "https://youtube.com/watch?v=example6" }
 ];
 
-// Gestion de la navigation entre les pages
-function showPage(pageId) {
-    // Masquer toutes les pages
-    document.querySelectorAll('.page').forEach(page => page.classList.remove('active-page'));
+// Fonction pour afficher le tableau
+function renderTable(data) {
+    const tbody = document.getElementById('table-body');
+    if (!tbody) return; // Si la page actuelle n'a pas de tableau, on ne fait rien
 
-    // Désactiver tous les boutons du menu
-    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-
-    // Afficher la page sélectionnée
-    document.getElementById(pageId).classList.add('active-page');
-
-    // Mettre en surbrillance le bon bouton
-    if (pageId === 'home') document.querySelectorAll('.nav-btn')[0].classList.add('active');
-    if (pageId === 'sn4') document.querySelectorAll('.nav-btn')[1].classList.add('active');
-    if (pageId === 'sn5') document.querySelectorAll('.nav-btn')[2].classList.add('active');
-}
-
-// Fonction pour injecter les données dans les tableaux HTML
-function renderTable(data, tableBodyId) {
-    const tbody = document.getElementById(tableBodyId);
-    tbody.innerHTML = ""; // Vider le contenu
+    tbody.innerHTML = "";
 
     data.forEach(item => {
         const row = document.createElement('tr');
@@ -45,9 +30,9 @@ function renderTable(data, tableBodyId) {
     });
 }
 
-// Fonction de recherche en temps réel
+// Recherche en temps réel
 function filterTable(level) {
-    const searchInput = document.getElementById(`search-${level}`).value.toLowerCase();
+    const searchInput = document.getElementById('search-input').value.toLowerCase();
     const data = level === 'sn4' ? dataSN4 : dataSN5;
 
     const filteredData = data.filter(item => {
@@ -55,11 +40,15 @@ function filterTable(level) {
                item.titre.toLowerCase().includes(searchInput);
     });
 
-    renderTable(filteredData, `table-body-${level}`);
+    renderTable(filteredData);
 }
 
-// Initialisation au chargement de la page
+// Chargement automatique au lancement de la page
 document.addEventListener("DOMContentLoaded", () => {
-    renderTable(dataSN4, 'table-body-sn4');
-    renderTable(dataSN5, 'table-body-sn5');
+    // On vérifie quelle page est actuellement ouverte en lisant l'URL
+    if (window.location.pathname.includes('sn4.html')) {
+        renderTable(dataSN4);
+    } else if (window.location.pathname.includes('sn5.html')) {
+        renderTable(dataSN5);
+    }
 });
