@@ -1,68 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Crescent — Fiches de révision</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<div style="font-family:Arial,Helvetica,sans-serif;max-width:100%;color:#243247;">
-  <h2 style="color:#0066cc;margin:0 0 8px 0;">
-    Math Crescent — Fiches de révision
-  </h2>
-  <p style="color:#596579;margin:0 0 18px 0;">
-    Retrouvez les fiches PDF et les vidéos explicatives pour réviser les mathématiques.
-  </p>
+    <!-- En-tête -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>Math Crescent</h1>
+        </div>
+        <nav>
+            <button class="nav-btn active" onclick="showPage('home')">Accueil</button>
+            <button class="nav-btn" onclick="showPage('sn4')">Sec 4 SN</button>
+            <button class="nav-btn" onclick="showPage('sn5')">Sec 5 SN</button>
+        </nav>
+    </header>
 
-  <div style="overflow-x:auto;">
-    <table style="width:100%;border-collapse:collapse;font-size:14px;">
-      <thead>
-        <tr style="background:#14233c;color:white;text-align:left;">
-          <th style="padding:12px 10px;">Niveau</th>
-          <th style="padding:12px 10px;">Catégorie</th>
-          <th style="padding:12px 10px;">Titre</th>
-          <th style="padding:12px 10px;">Fiche PDF</th>
-          <th style="padding:12px 10px;">Vidéo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background:#f7f9fc;">
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">SN4</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">Géométrie</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">Triangles isométriques CCC</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">
-            <a href="https://example.com/fiche1.pdf" target="_blank"
-               style="color:#0066cc;font-weight:bold;">?? Voir la fiche</a>
-          </td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">
-            <a href="https://www.youtube.com/" target="_blank"
-               style="color:#d95f00;font-weight:bold;">? Voir la vidéo</a>
-          </td>
-        </tr>
-        <tr style="background:#ffffff;">
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">SN4</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">Fonctions</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">La parabole</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">
-            <a href="https://example.com/fiche2.pdf" target="_blank"
-               style="color:#0066cc;font-weight:bold;">?? Voir la fiche</a>
-          </td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">
-            <a href="https://www.youtube.com/" target="_blank"
-               style="color:#d95f00;font-weight:bold;">? Voir la vidéo</a>
-          </td>
-        </tr>
-        <tr style="background:#f7f9fc;">
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">SN5</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">Algèbre</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">Racines carrées</td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">
-            <a href="https://example.com/fiche3.pdf" target="_blank"
-               style="color:#0066cc;font-weight:bold;">?? Voir la fiche</a>
-          </td>
-          <td style="padding:12px 10px;border-bottom:1px solid #e2e8f0;">
-            <a href="https://www.youtube.com/" target="_blank"
-               style="color:#d95f00;font-weight:bold;">? Voir la vidéo</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <main class="container">
 
-  <p style="font-size:12px;color:#7b8798;margin-top:12px;">
-    Math Crescent — Des explications étape par étape pour réussir en mathématiques.
-  </p>
-</div>
+        <!-- PAGE ACCUEIL -->
+        <section id="home" class="page active-page">
+            <div class="hero">
+                <h2>Fiches de révision & Matériel d'accompagnement</h2>
+                <p>Bienvenue sur le site officiel de la chaîne <strong>Math Crescent</strong>. Vous trouverez ici toutes les fiches récapitulatives en PDF associées aux vidéos explicatives pour réussir vos cours de mathématiques au secondaire.</p>
+
+                <div class="card-grid">
+                    <div class="card" onclick="showPage('sn4')">
+                        <h3>Secondary 4 SN</h3>
+                        <p>Consulter les fiches de révision pour le programme de 4e secondaire (fonctions, géométrie, trigonométrie...).</p>
+                        <span class="card-link">Voir les ressources &rarr;</span>
+                    </div>
+                    <div class="card" onclick="showPage('sn5')">
+                        <h3>Secondary 5 SN</h3>
+                        <p>Consulter les fiches de révision pour le programme de 5e secondaire (logarithmes, coniques, vecteurs...).</p>
+                        <span class="card-link">Voir les ressources &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE SECONDAIRE 4 SN -->
+        <section id="sn4" class="page">
+            <h2>Secondaire 4 — Science Naturelle (SN4)</h2>
+            <p class="subtitle">Retrouvez les fiches de révision et liens vers les vidéos explicatives.</p>
+
+            <div class="search-box">
+                <input type="text" id="search-sn4" placeholder="Rechercher par thème ou titre..." onkeyup="filterTable('sn4')">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Catégorie / Thème</th>
+                            <th>Titre de la vidéo</th>
+                            <th>Fiche de révision</th>
+                            <th>Vidéo YouTube</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-sn4">
+                        <!-- Le contenu sera généré dynamiquement par le JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PAGE SECONDAIRE 5 SN -->
+        <section id="sn5" class="page">
+            <h2>Secondaire 5 — Science Naturelle (SN5)</h2>
+            <p class="subtitle">Retrouvez les fiches de révision et liens vers les vidéos explicatives.</p>
+
+            <div class="search-box">
+                <input type="text" id="search-sn5" placeholder="Rechercher par thème ou titre..." onkeyup="filterTable('sn5')">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Catégorie / Thème</th>
+                            <th>Titre de la vidéo</th>
+                            <th>Fiche de révision</th>
+                            <th>Vidéo YouTube</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-sn5">
+                        <!-- Le contenu sera généré dynamiquement par le JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Math Crescent. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

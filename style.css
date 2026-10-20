@@ -1,0 +1,190 @@
+/* Style Général */
+:root {
+    --primary: #1e3a8a;       /* BrandNavy */
+    --secondary: #0d9488;     /* Accent / Teal */
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* En-tête / Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav .nav-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+nav .nav-btn:hover, nav .nav-btn.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    min-height: 80vh;
+}
+
+/* Sections / Pages */
+.page {
+    display: none;
+}
+
+.page.active-page {
+    display: block;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+/* Accueil Cards */
+.hero {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-top: 0;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+/* Barre de recherche */
+.search-box {
+    margin-bottom: 1rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Tableau */
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem;
+    font-size: 0.95rem;
+}
+
+td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Boutons / Liens dans le tableau */
+.btn-link {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-pdf {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.btn-yt {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.btn-link:hover {
+    opacity: 0.85;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-top: 1px solid var(--border-color);
+    color: #64748b;
+    font-size: 0.9rem;
+}
