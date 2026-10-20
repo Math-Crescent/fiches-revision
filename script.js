@@ -1,221 +1,65 @@
-/* ==========================================================================
-   STYLES DE BASE & RESPONSIVE (Méthode Mobile-Friendly)
-   ========================================================================== */
+// Données de démonstration (Structure correspondant à un futur fichier CSV)
+const dataSN4 = [
+    { categorie: "Fonctions", titre: "Les transformations de la fonction de base", pdf: "https://drive.google.com/example-pdf1", youtube: "https://youtube.com/watch?v=example1" },
+    { categorie: "Géométrie", titre: "Les relations métriques dans le triangle rectangle", pdf: "https://drive.google.com/example-pdf2", youtube: "https://youtube.com/watch?v=example2" },
+    { categorie: "Statistique", titre: "La droite de régression linéaire", pdf: "https://drive.google.com/example-pdf3", youtube: "https://youtube.com/watch?v=example3" }
+];
 
-:root {
-    --primary: #1e3a8a;
-    --secondary: #0d9488;
-    --bg-color: #f8fafc;
-    --card-bg: #ffffff;
-    --text-color: #1e293b;
-    --border-color: #e2e8f0;
+const dataSN5 = [
+    { categorie: "Fonctions", titre: "Représentation graphique de fonctions rationnelles", pdf: "https://drive.google.com/example-pdf4", youtube: "https://youtube.com/watch?v=example4" },
+    { categorie: "Fonctions", titre: "Fonctions racine carrée : Trouver la règle", pdf: "https://drive.google.com/example-pdf5", youtube: "https://youtube.com/watch?v=example5" },
+    { categorie: "Trigonométrie", titre: "Les identités trigonométriques et preuves", pdf: "https://drive.google.com/example-pdf6", youtube: "https://youtube.com/watch?v=example6" }
+];
+
+// Gestion de la navigation entre les pages
+function showPage(pageId) {
+    // Masquer toutes les pages
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active-page'));
+
+    // Désactiver tous les boutons du menu
+    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+
+    // Afficher la page sélectionnée
+    document.getElementById(pageId).classList.add('active-page');
+
+    // Mettre en surbrillance le bon bouton
+    if (pageId === 'home') document.querySelectorAll('.nav-btn')[0].classList.add('active');
+    if (pageId === 'sn4') document.querySelectorAll('.nav-btn')[1].classList.add('active');
+    if (pageId === 'sn5') document.querySelectorAll('.nav-btn')[2].classList.add('active');
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.5;
+// Fonction pour injecter les données dans les tableaux HTML
+function renderTable(data, tableBodyId) {
+    const tbody = document.getElementById(tableBodyId);
+    tbody.innerHTML = ""; // Vider le contenu
+
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><strong>${item.categorie}</strong></td>
+            <td>${item.titre}</td>
+            <td><a href="${item.pdf}" target="_blank" class="btn-link btn-pdf">Télécharger PDF</a></td>
+            <td><a href="${item.youtube}" target="_blank" class="btn-link btn-yt">Visionner sur YouTube</a></td>
+        `;
+        tbody.appendChild(row);
+    });
 }
 
-/* En-tête / Navbar réactive */
-.navbar {
-    display: flex;
-    flex-direction: column; /* Alignement vertical par défaut (mobile) */
-    gap: 0.75rem;
-    align-items: center;
-    background-color: var(--primary);
-    color: white;
-    padding: 1rem;
+// Fonction de recherche en temps réel
+function filterTable(level) {
+    const searchInput = document.getElementById(`search-${level}`).value.toLowerCase();
+    const data = level === 'sn4' ? dataSN4 : dataSN5;
+
+    const filteredData = data.filter(item => {
+        return item.categorie.toLowerCase().includes(searchInput) ||
+               item.titre.toLowerCase().includes(searchInput);
+    });
+
+    renderTable(filteredData, `table-body-${level}`);
 }
 
-.logo h1 {
-    margin: 0;
-    font-size: 1.3rem;
-    text-align: center;
-}
-
-nav {
-    display: flex;
-    gap: 0.5rem;
-    width: 100%;
-    justify-content: center;
-}
-
-nav .nav-btn {
-    flex: 1; /* Les boutons prennent une largeur égale sur mobile */
-    max-width: 120px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    padding: 0.6rem 0.5rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-    border-radius: 6px;
-    text-align: center;
-}
-
-nav .nav-btn.active {
-    background-color: var(--secondary);
-    font-weight: bold;
-}
-
-/* Conteneur principal */
-.container {
-    padding: 1rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Barre de recherche responsive */
-.search-box input {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    font-size: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-sizing: border-box;
-    margin-bottom: 1rem;
-}
-
-/* ==========================================================================
-   TRANSFORMATION DU TABLEAU EN CARTES (POUR MOBILE)
-   ========================================================================== */
-
-/* Sur petit écran : Transformer le tableau <table> en blocs/cartes */
-@media screen and (max-width: 767px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
-    }
-
-    /* Masquer l'en-tête du tableau sur mobile */
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-
-    /* Chaque ligne devient un bloc/carte indépendant */
-    tr {
-        background: white;
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        margin-bottom: 1rem;
-        padding: 1rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
-
-    td {
-        border: none;
-        padding: 0.4rem 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Boutons de liens plein écran sur mobile */
-    .btn-link {
-        display: block;
-        text-align: center;
-        padding: 0.75rem;
-        margin-top: 0.4rem;
-        border-radius: 6px;
-        font-size: 0.95rem;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .btn-pdf {
-        background-color: #e0f2fe;
-        color: #0369a1;
-    }
-
-    .btn-yt {
-        background-color: #fee2e2;
-        color: #dc2626;
-    }
-}
-
-/* ==========================================================================
-   STYLES POUR ÉCRANS D'ORDINATEUR (ORDINATEUR & TABLETTE > 768px)
-   ========================================================================== */
-
-@media screen and (min-width: 768px) {
-    .navbar {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-    }
-
-    .logo h1 {
-        font-size: 1.6rem;
-    }
-
-    nav {
-        width: auto;
-    }
-
-    nav .nav-btn {
-        flex: initial;
-        padding: 0.5rem 1.2rem;
-    }
-
-    /* Rétablir l'affichage sous forme de tableau traditionnel */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        background: white;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
-
-    thead {
-        display: table-header-group;
-    }
-
-    tbody {
-        display: table-row-group;
-    }
-
-    tr {
-        display: table-row;
-        border: none;
-        box-shadow: none;
-        margin-bottom: 0;
-        padding: 0;
-    }
-
-    th {
-        background-color: var(--primary);
-        color: white;
-        padding: 1rem;
-        text-align: left;
-    }
-
-    td {
-        display: table-cell;
-        padding: 1rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .btn-link {
-        display: inline-block;
-        padding: 0.4rem 0.8rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: 600;
-    }
-
-    .btn-pdf {
-        background-color: #e0f2fe;
-        color: #0369a1;
-    }
-
-    .btn-yt {
-        background-color: #fee2e2;
-        color: #dc2626;
-    }
-}
+// Initialisation au chargement de la page
+document.addEventListener("DOMContentLoaded", () => {
+    renderTable(dataSN4, 'table-body-sn4');
+    renderTable(dataSN5, 'table-body-sn5');
+});
