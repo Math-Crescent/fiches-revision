@@ -1,14 +1,10 @@
 // Données de démonstration
 const dataSN4 = [
-    { categorie: "Fonctions", titre: "Les transformations de la fonction de base", pdf: "https://drive.google.com/example-pdf1", youtube: "https://youtube.com/watch?v=example1" },
-    { categorie: "Géométrie", titre: "Les relations métriques dans le triangle rectangle", pdf: "https://drive.google.com/example-pdf2", youtube: "https://youtube.com/watch?v=example2" },
-    { categorie: "Statistique", titre: "La droite de régression linéaire", pdf: "https://drive.google.com/example-pdf3", youtube: "https://youtube.com/watch?v=example3" }
+    { categorie: "Géométrie analytique", titre: "Prouver un parallélogramme : Pente er Distances (2 méthodes)", pdf: "https://drive.google.com/file/d/17tPhR94jRdktAenCfXURORLbtvz7hY_Q/view?usp=sharing", youtube: "https://youtu.be/99SuRUuYTn8" }
 ];
 
 const dataSN5 = [
-    { categorie: "Fonctions", titre: "Représentation graphique de fonctions rationnelles", pdf: "https://drive.google.com/example-pdf4", youtube: "https://youtube.com/watch?v=example4" },
-    { categorie: "Fonctions", titre: "Fonctions racine carrée : Trouver la règle", pdf: "https://drive.google.com/example-pdf5", youtube: "https://youtube.com/watch?v=example5" },
-    { categorie: "Trigonométrie", titre: "Les identités trigonométriques et preuves", pdf: "https://drive.google.com/example-pdf6", youtube: "https://youtube.com/watch?v=example6" }
+    { categorie: "Fonctions", titre: "Comment tracer une fonction rationnelle ?", pdf: "https://drive.google.com/file/d/1-f0Wker-ZmiNxM5C1bJABLWkutKnjpZT/view?usp=sharing", youtube: "https://youtu.be/ayiuz8rTINU" }
 ];
 
 // Fonction pour afficher le tableau
