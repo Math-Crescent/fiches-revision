@@ -1,10 +1,10 @@
 // Données de démonstration
 const dataSN4 = [
-    { categorie: "Géométrie analytique", titre: "Prouver un parallélogramme : Pente er Distances (2 méthodes)", pdf: "https://drive.google.com/file/d/1nx3roHWiXtSMnBeqKB1iEODwZwzLy8Lh/view?usp=sharing", youtube: "https://youtu.be/99SuRUuYTn8" }
+    { categorie: "Géométrie analytique", titre: "Prouver un parallélogramme : Pente er Distances (2 méthodes)", pdf: "https://drive.google.com/file/d/17tPhR94jRdktAenCfXURORLbtvz7hY_Q/view?usp=sharing", youtube: "https://youtu.be/99SuRUuYTn8" }
 ];
 
 const dataSN5 = [
-    { categorie: "Fonctions", titre: "Trouver la règle d’une fonction rationnelle à partir d’un graphique", pdf: "", youtube: "" }
+    { categorie: "Fonctions", titre: "Comment tracer une fonction rationnelle ?", pdf: "https://drive.google.com/file/d/1-f0Wker-ZmiNxM5C1bJABLWkutKnjpZT/view?usp=sharing", youtube: "https://youtu.be/ayiuz8rTINU" }
 ];
 
 // Fonction pour afficher le tableau
