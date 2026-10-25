@@ -4,7 +4,7 @@ const dataSN4 = [
 ];
 
 const dataSN5 = [
-    { categorie: "Fonctions", titre: "Comment tracer une fonction rationnelle ?", pdf: "https://drive.google.com/file/d/1-f0Wker-ZmiNxM5C1bJABLWkutKnjpZT/view?usp=sharing", youtube: "https://youtu.be/ayiuz8rTINU" }
+    { categorie: "Fonctions", titre: "Comment tracer une fonction rationnelle ?", pdf: "https://drive.google.com/file/d/1v5mXnwznARaUnyaS8Z9uFKL2l-7OwM1e/view?usp=sharing", youtube: "https://youtu.be/szPIjddy6Qs" }
 ];
 
 // Fonction pour afficher le tableau
