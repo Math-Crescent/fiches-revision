@@ -15,6 +15,12 @@ const dataSN5 = [
     "titre": "Comment trouver la réciproque d'une fonction racine carrée",
     "pdf": "https://drive.google.com/file/d/1xJ8Z67G3k60IKhsCdRv4FMMIxN8ue1aD/view?usp=sharing",
     "youtube": "https://youtu.be/jfRXlvoWf1I"
+  },
+  {
+    "categorie": "Fonctions",
+    "titre": "Trouver la règle d’une fonction rationnelle à partir d’un graphique",
+    "pdf": "https://drive.google.com/file/d/1xJ8Z67G3k60IKhsCdRv4FMMIxN8ue1aD/view?usp=sharing",
+    "youtube": "https://youtu.be/g4vHKhhXHug"
   }
 ];
 
