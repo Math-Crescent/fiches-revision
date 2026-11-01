@@ -4,7 +4,24 @@ const dataSN4 = [
 ];
 
 const dataSN5 = [
-    { categorie: "Fonctions", titre: "Comment tracer une fonction rationnelle ?", pdf: "https://drive.google.com/file/d/1v5mXnwznARaUnyaS8Z9uFKL2l-7OwM1e/view?usp=sharing", youtube: "https://youtu.be/szPIjddy6Qs" }
+  {
+    "categorie": "Fonctions",
+    "titre": "Comment tracer une fonction rationnelle ?",
+    "pdf": "https://drive.google.com/file/d/1v5mXnwznARaUnyaS8Z9uFKL2l-7OwM1e/view?usp=sharing",
+    "youtube": "https://youtu.be/szPIjddy6Qs"
+  },
+  {
+    "categorie": "Fonctions",
+    "titre": "Comment trouver la réciproque d'une fonction racine carrée",
+    "pdf": "https://drive.google.com/file/d/1xJ8Z67G3k60IKhsCdRv4FMMIxN8ue1aD/view?usp=sharing",
+    "youtube": "https://youtu.be/jfRXlvoWf1I"
+  },
+  {
+    "categorie": "Fonctions",
+    "titre": "Trouver la règle d’une fonction rationnelle à partir d’un graphique",
+    "pdf": "https://drive.google.com/file/d/1xJ8Z67G3k60IKhsCdRv4FMMIxN8ue1aD/view?usp=sharing",
+    "youtube": "https://youtu.be/g4vHKhhXHug"
+  }
 ];
 
 // Fonction pour afficher le tableau
