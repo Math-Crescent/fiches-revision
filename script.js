@@ -19,7 +19,7 @@ const dataSN5 = [
   {
     "categorie": "Fonctions",
     "titre": "Trouver la règle d’une fonction rationnelle à partir d’un graphique",
-    "pdf": "https://drive.google.com/file/d/1xJ8Z67G3k60IKhsCdRv4FMMIxN8ue1aD/view?usp=sharing",
+    "pdf": "https://drive.google.com/file/d/1LDHjxHnn-B93YCMVU_hnILADsA9iO84U/view?usp=sharing",
     "youtube": "https://youtu.be/g4vHKhhXHug"
   }
 ];
