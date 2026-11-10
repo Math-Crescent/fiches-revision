@@ -5,22 +5,39 @@ const dataSN4 = [
 
 const dataSN5 = [
   {
+    // sn5-rational-01
     "categorie": "Fonctions",
     "titre": "Comment tracer une fonction rationnelle ?",
     "pdf": "https://drive.google.com/file/d/1v5mXnwznARaUnyaS8Z9uFKL2l-7OwM1e/view?usp=sharing",
     "youtube": "https://youtu.be/szPIjddy6Qs"
   },
   {
+    // sn5-sqrt-04
     "categorie": "Fonctions",
     "titre": "Comment trouver la réciproque d'une fonction racine carrée",
     "pdf": "https://drive.google.com/file/d/1xJ8Z67G3k60IKhsCdRv4FMMIxN8ue1aD/view?usp=sharing",
     "youtube": "https://youtu.be/jfRXlvoWf1I"
   },
   {
+    // sn5-rational-02
     "categorie": "Fonctions",
-    "titre": "Trouver la règle d’une fonction rationnelle à partir d’un graphique",
+    "titre": "Trouver la règle d'une fonction rationnelle à partir d'un graphique",
     "pdf": "https://drive.google.com/file/d/1LDHjxHnn-B93YCMVU_hnILADsA9iO84U/view?usp=sharing",
     "youtube": "https://youtu.be/g4vHKhhXHug"
+  },
+  {
+    // sn5-sqrt-03
+    "categorie": "Fonctions",
+    "titre": "Résoudre des équations et inéquations avec racines carrées",
+    "pdf": "https://drive.google.com/file/d/1NHsGVzG25O4_LB4YW56UI0Epi5o4NRNU/view?usp=sharing",
+    "youtube": "https://youtu.be/REaPqMkDF6M"
+  },
+  {
+    // sn5-rational-03
+    "categorie": "Fonctions",
+    "titre": "Équations et inéquations rationnelles | Exercices résolus",
+    "pdf": "https://drive.google.com/file/d/1N_AlCRAqo_2iStPFNg3zmVRgFMEnlHgi/view?usp=sharing",
+    "youtube": "https://youtu.be/r97bhwDPn60"
   }
 ];
 
