@@ -38,6 +38,13 @@ const dataSN5 = [
     "titre": "Équations et inéquations rationnelles | Exercices résolus",
     "pdf": "https://drive.google.com/file/d/1N_AlCRAqo_2iStPFNg3zmVRgFMEnlHgi/view?usp=sharing",
     "youtube": "https://youtu.be/r97bhwDPn60"
+  },
+  {
+    // sn5-abs-01
+    "categorie": "Fonctions",
+    "titre": "Fonction valeur absolue : formes, paramètres et graphique",
+    "pdf": "https://drive.google.com/file/d/1WuqLvGRmcD3Z6XF1D-BNi6HinHZa28vI/view?usp=sharing",
+    "youtube": "https://youtu.be/ZREEVSmHLOA"
   }
 ];
 
